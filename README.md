@@ -8,6 +8,7 @@ It is in the very early stages, and as such is not currently playable.
 
 ### CHANGELOG
 v0.01
+
 Released 2016-05-01
 
 * Initial Commit
