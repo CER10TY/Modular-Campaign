@@ -1,0 +1,226 @@
+version=52;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=18;
+	};
+	class Camera
+	{
+		pos[]={5240.8901,7.8734841,7041.6987};
+		dir[]={0.12206574,-0.63701266,0.76124626};
+		up[]={0.10086286,0.77080405,0.62901872};
+		aside[]={0.98745948,-5.9815648e-008,-0.15833715};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Characters_F_BLUFOR",
+	"a3_characters_f",
+	"A3_Structures_F_Civ_InfoBoards",
+	"A3_Structures_F_Civ_Camping",
+	"A3_Structures_F_Items_Electronics"
+};
+randomSeed=10943522;
+class ScenarioData
+{
+	author="tryteyker";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		day=28;
+		hour=13;
+		minute=37;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+	class Entities
+	{
+		items=8;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5242.1875,5.0014296,7041.1157};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=1;
+					type="B_soldier_AR_F";
+					atlOffset=-9.5367432e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=0;
+			atlOffset=-9.5367432e-006;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5245.4551,5.9688811,7044.9717};
+				angles[]={0,0.35136336,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2;
+			type="MapBoard_altis_F";
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5243.3979,5.4065027,7045.4087};
+				angles[]={0,3.4938874,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=3;
+			type="Land_CampingTable_F";
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5241.9336,5.5064859,7045.7959};
+				angles[]={0,6.1350584,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=4;
+			type="Land_CampingChair_V2_F";
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5246.4185,5.5064859,7044.1055};
+				angles[]={0,1.2811373,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5;
+			type="Land_CampingChair_V2_F";
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5246.3594,5.5064859,7043.188};
+				angles[]={0,1.7036332,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=6;
+			type="Land_CampingChair_V2_F";
+		};
+		class Item6
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5243.8301,5.9690723,7045.1729};
+				angles[]={0,3.549057,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="this addAction [""<t color='#ff0000'>Open Mission View</t>"",""createDialog 'ARC_Mission_View'""]; this addAction [""<t color='#2200ff'>Open Operator View</t>"",""createDialog 'ARC_Operator_View'""];";
+				name="Hub_Laptop";
+			};
+			id=7;
+			type="Land_Laptop_unfolded_F";
+			atlOffset=0.8130002;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="enableSimulation";
+					expression="if !(is3DEN) then {_this enablesimulation _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item7
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5241.0928,5.5802579,7045.7041};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setObjectTexture [1, ""splash.paa""];";
+			};
+			id=17;
+			type="Land_InfoStand_V2_F";
+		};
+	};
+};

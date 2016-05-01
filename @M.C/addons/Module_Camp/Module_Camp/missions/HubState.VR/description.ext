@@ -1,0 +1,17 @@
+#include "masterinclude.hpp"
+
+class CfgFunctions 
+{
+	class ARC // Identifier, same for all official scripts
+	{
+		#include "missionlist\functions\config.hpp"
+		#include "operatorlist\functions\config.hpp"
+	};
+};
+
+onLoadName = "ARC_Modular_HUB";
+onLoadMission = "ARCOMM developed Modular Campaign";
+author = "tryteyker";
+overviewPicture = "splash.paa";
+loadScreen = "splash.paa";
+enableDebugConsole = 1;

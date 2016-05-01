@@ -1,0 +1,43 @@
+class Campaign 
+{
+	name = "Module_Camp";
+	firstBattle = Missions;
+	disableMP = 1;
+	enableHub = 1;
+	
+	briefingName = "M.C.";
+	author = "tryteyker";
+	overviewPicture = "Module_Camp\Module_Camp\img\splash.paa";
+	overviewText = "An in-development modular campaign that aims to give creative freedom to both mission makers and players.";
+	class MissionDefault
+	{
+		lives = -1;
+		lost = ;
+		end1 = ;
+		end2 = ;
+		end3 = ;
+		end4 = ;
+		end5 = ;
+		end6 = ;
+	};
+	
+	class Missions
+	{
+		name = "The Hub";
+		cutScene = ;
+		firstMission = StandardHub;
+		end1 = ;
+		end2 = ;
+		end3 = ;
+		end4 = ;
+		end5 = ;
+		end6 = ;
+		lost = ;
+		
+		class StandardHub: MissionDefault
+		{
+			template = HubState.VR;
+		};
+		
+	};
+};
