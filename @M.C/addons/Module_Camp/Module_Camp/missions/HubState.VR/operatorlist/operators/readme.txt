@@ -18,17 +18,26 @@ Reload Speed: 0.5
 Commanding: 1
 General: 0.5
 */
-
+private ["_name","_class","_gear","_stats","_picture","_idcCombo","_finalIDC","_index","_idcPics","_lbSlot", "_picCtrl","_idcClass"];
+disableSerialization; 
 _name = "James 'King' Kingsley";
 _class = "Officer";
 _gear = []; // Add in all gear here, can be strings, does not have to be classnames (gear view just parses strings)
 _stats = [0.6,0.3,0.9,1,0.4,0.1,1,0.5,1,0.5]; // Stats in order of setSkill array command. More info here: https://community.bistudio.com/wiki/setSkill_array
-_picture = "operatorlist\operators\img\kingsley.jpg"; // Images saved in img\ folder
+_picture = "operatorlist\img\no-image.jpg"; // Images saved in img\ folder
+_idcCombo = _this select 0;
+_idcPics = _this select 1;
+_idcClass = _this select 2;
 
-_idcRangeCombo = [2100, 2101, 2102, 2103]; // This is a constant for HubState.VR, it's the combobox values. 
 _finalIDC = 0;
+_index = 0;
 {
-if (lbText [_x, 0] == "") exitWith {lbAdd [_x, _name]; _finalIDC = _forEachIndex;};
-} foreach _idcRangeCombo;
+if (lbText [_x, 0] == "") exitWith {lbAdd [_x, _name]; lbSetCurSel [_x, 0]; _finalIDC = _x; _index = _forEachIndex};
+} foreach _idcCombo;
 
-_idcRangePics = [1200, 1201, 1202, 1203];
+_lbSlot = _finalIDC;
+_picCtrl = _idcPics select _index;
+ctrlSetText [_picCtrl, _picture];
+
+_textCtrl = _idcClass select _index;
+ctrlSetText [_textCtrl, _class];
