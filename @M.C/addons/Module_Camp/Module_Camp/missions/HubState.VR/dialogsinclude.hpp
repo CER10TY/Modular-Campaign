@@ -9,3 +9,6 @@
 
 // Operator List View
 #include "operatorlist\dialogs.hpp"
+
+// Operator Gear View
+#include "operatorlist\gearview\dialogs.hpp"

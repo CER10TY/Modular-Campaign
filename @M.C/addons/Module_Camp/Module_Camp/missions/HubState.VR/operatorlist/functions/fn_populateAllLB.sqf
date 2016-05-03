@@ -13,7 +13,7 @@ private ["_idc","_operators","_sequence"];
 _idc = param [0, [], []];
 _operators = profileNamespace getVariable ["operators",[]];
 
-if (count _operators == 0) exitWith {ctrlSetText [1005, "ERROR: UNABLE TO LOAD OPS!"]};
+if (count _operators == 0) exitWith {};
 
 _sequence = 0;
 
