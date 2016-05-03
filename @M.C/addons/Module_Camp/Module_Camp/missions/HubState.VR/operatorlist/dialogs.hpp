@@ -1,3 +1,4 @@
+
 class ARC_Operator_View {
 	idd = -1;
 	movingenable = false;
@@ -20,7 +21,8 @@ controls[]=
 	TXT_OP1_CLASS,
 	TXT_OP2_CLASS,
 	TXT_OP3_CLASS,
-	TXT_OP4_CLASS
+	TXT_OP4_CLASS,
+	TXT_ERROR
 };
 ////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT START (by tryteyker, v1.063, #Kiwuho)
@@ -192,6 +194,14 @@ class TXT_OP4_CLASS: RscText
 	x = 0.592812 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class TXT_ERROR: RscText
+{
+	idc = 1005;
+	x = 0.453593 * safezoneW + safezoneX;
+	y = 0.72 * safezoneH + safezoneY;
+	w = 0.134062 * safezoneW;
 	h = 0.022 * safezoneH;
 };
 ////////////////////////////////////////////////////////

@@ -1,4 +1,4 @@
-#include "masterinclude.hpp"
+#include "dialogsinclude.hpp"
 
 class CfgFunctions 
 {
