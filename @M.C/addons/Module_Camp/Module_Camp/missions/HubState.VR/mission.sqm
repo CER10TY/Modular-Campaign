@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5361.1919,107.54118,6865.7769};
-		dir[]={-0.43803492,-0.7337535,0.51959753};
-		up[]={-0.47293812,0.67912161,0.56099945};
-		aside[]={0.76451194,4.2815227e-006,0.64450598};
+		pos[]={5249.1377,6.8350821,7053.4175};
+		dir[]={-0.86691958,-0.4983004,0.02001206};
+		up[]={-0.49830672,0.86668998,0.01150248};
+		aside[]={0.023076659,4.5094894e-006,0.99966544};
 	};
 };
 binarizationWanted=0;
@@ -5335,6 +5335,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="this addAction [""Turn on radio"", {[] call BIS_fnc_jukebox}, nil, 2, false, true, """", ""(_target distance _this) < 4""];";
 			};
 			id=475;
 			type="Land_FMradio_F";

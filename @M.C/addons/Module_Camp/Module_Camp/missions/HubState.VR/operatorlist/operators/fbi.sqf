@@ -18,6 +18,6 @@ _name = "Jonathan 'FBI' Wells";
 _class = "Officer";
 _gear = []; // Use CLASSNAMES to specify gear. The _gear variable will be saved to namespace for ease of use, and gear view uses config class displayName.
 _stats = [0.6,0.3,0.9,1,0.4,0.1,1,0.5,1,0.5]; // Stats in order of setSkill array command. More info here: https://community.bistudio.com/wiki/setSkill_array
-_picture = "operatorlist\img\no-image.jpg"; // Images saved in img\ folder
+_picture = "operatorlist\img\o-image.jpg"; // Images saved in img\ folder
 
 [_name, _class, _gear, _stats, _picture] call ARC_fnc_addOperatorToNamespace;

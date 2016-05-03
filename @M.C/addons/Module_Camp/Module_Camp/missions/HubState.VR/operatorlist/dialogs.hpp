@@ -1,6 +1,6 @@
 
 class ARC_Operator_View {
-	idd = -1;
+	idd = 5500;
 	movingenable = false;
 	onLoad = "nul = _this execVM 'operatorlist\dialog_init.sqf'";
 controls[]=
@@ -50,8 +50,7 @@ class TXT_OP_LIST: RscText
 class PIC_OP1: RscPicture
 {
 	idc = 1200;
-
-	text = "#(argb,8,8,3)color(1,1,1,1)";
+	text = "operatorlist\img\o-image.jpg";
 	x = 0.345312 * safezoneW + safezoneX;
 	y = 0.368 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -71,8 +70,7 @@ class BTN_VIEW_GEAR: RscButton
 class PIC_OP2: RscPicture
 {
 	idc = 1201;
-
-	text = "#(argb,8,8,3)color(1,1,1,1)";
+	text = "operatorlist\img\o-image.jpg";
 	x = 0.427812 * safezoneW + safezoneX;
 	y = 0.368 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -81,8 +79,7 @@ class PIC_OP2: RscPicture
 class PIC_OP3: RscPicture
 {
 	idc = 1202;
-
-	text = "#(argb,8,8,3)color(1,1,1,1)";
+	text = "operatorlist\img\o-image.jpg";
 	x = 0.510312 * safezoneW + safezoneX;
 	y = 0.368 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -91,8 +88,7 @@ class PIC_OP3: RscPicture
 class PIC_OP4: RscPicture
 {
 	idc = 1203;
-
-	text = "#(argb,8,8,3)color(1,1,1,1)";
+	text = "operatorlist\img\o-image.jpg";
 	x = 0.592812 * safezoneW + safezoneX;
 	y = 0.368 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -101,7 +97,6 @@ class PIC_OP4: RscPicture
 class COMBO_OP1_SELECT: RscCombo
 {
 	idc = 2100;
-
 	x = 0.345312 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -111,7 +106,6 @@ class COMBO_OP1_SELECT: RscCombo
 class COMBO_OP2_SELECT: RscCombo
 {
 	idc = 2101;
-
 	x = 0.427812 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -121,7 +115,6 @@ class COMBO_OP2_SELECT: RscCombo
 class COMBO_OP3_SELECT: RscCombo
 {
 	idc = 2102;
-
 	x = 0.510312 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -131,7 +124,6 @@ class COMBO_OP3_SELECT: RscCombo
 class COMBO_OP4_SELECT: RscCombo
 {
 	idc = 2103;
-
 	x = 0.592812 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -141,7 +133,6 @@ class COMBO_OP4_SELECT: RscCombo
 class BTN_VIEW_STATS: RscButton
 {
 	idc = 1601;
-
 	text = "Stats View"; //--- ToDo: Localize;
 	x = 0.402031 * safezoneW + safezoneX;
 	y = 0.72 * safezoneH + safezoneY;
@@ -153,17 +144,16 @@ class BTN_EXIT: RscButton
 {
 	idc = 1602;
 	action = "closeDialog 0";
-
 	text = "Exit operator view"; //--- ToDo: Localize;
 	x = 0.592812 * safezoneW + safezoneX;
 	y = 0.72 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
 	h = 0.022 * safezoneH;
+	tooltip = "This also saves your selection";
 };
 class TXT_OP1_CLASS: RscText
 {
 	idc = 1001;
-	text = "Rifleman"; //--- ToDo: Localize;
 	x = 0.345312 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -172,7 +162,6 @@ class TXT_OP1_CLASS: RscText
 class TXT_OP2_CLASS: RscText
 {
 	idc = 1002;
-	text = "Rifleman"; //--- ToDo: Localize;
 	x = 0.427812 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -181,7 +170,6 @@ class TXT_OP2_CLASS: RscText
 class TXT_OP3_CLASS: RscText
 {
 	idc = 1003;
-	text = "Rifleman"; //--- ToDo: Localize;
 	x = 0.510312 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -190,7 +178,6 @@ class TXT_OP3_CLASS: RscText
 class TXT_OP4_CLASS: RscText
 {
 	idc = 1004;
-	text = "Rifleman"; //--- ToDo: Localize;
 	x = 0.592812 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
