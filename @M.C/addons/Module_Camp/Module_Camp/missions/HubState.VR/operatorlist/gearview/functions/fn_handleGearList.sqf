@@ -56,7 +56,6 @@ _forIndex = 0;
 	_weapon = _x select 0;
 	if (_weapon == "") exitWith {}; // Unnecessary to add nothing.
 	_attachments = _x select 1;
-	diag_log format ["Weapon: %1 Attachments: %2",_weapon,_attachments];
 	_configEntry = [_weapon] call ARC_fnc_getConfigEntry;
 	lbAdd [_currentLB, getText(configFile >> _configEntry >> _weapon >> "displayName")];
 	lbSetPicture [_currentLB, _forIndex, getText(configFile >> _configEntry >> _weapon >> "picture")];

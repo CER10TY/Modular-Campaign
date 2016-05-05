@@ -6,14 +6,21 @@ Further info will be provided at relevant lines.
 
 Parameters:
 0: STRING - Arsenal Loadout Name
-1: STRING - Unique name of operator (optional)
+1: STRING - Unique name of operator
+2: BOOL - Overwrite yes/no. Skips isNil check on setVariable. Optional, default false.
 
 RETURNS:
-N/A
+0: BOOL - If successful
 */
-private ["_gearName","_operatorName","_dummy","_uniform","_vest","_backpack","_uniformItems","_vestItems","_backpackItems","_uniformArray","_gunsArray","_primaryWeapon","_secondaryWeapon","_handgunWeapon","_primaryItems","_secondaryItems","_handgunItems","_primaryMagazine","_secondaryMagazine","_handgunMagazine"];
+private ["_weaponVar","_containerVar","_overwrite","_gearName","_operatorName","_dummy","_uniform","_vest","_backpack","_uniformItems","_vestItems","_backpackItems","_uniformArray","_gunsArray","_primaryWeapon","_secondaryWeapon","_handgunWeapon","_primaryItems","_secondaryItems","_handgunItems","_primaryMagazine","_secondaryMagazine","_handgunMagazine"];
 _gearName = param [0, "", [""]];
 _operatorName = param [1, "", [""]];
+_overwrite = param [2, false, [true]];
+
+_containerVar = format ["%1_gear_containers",_operatorName];
+_weaponVar = format ["%1_gear_weapons",_operatorName];
+
+if (_gearName == "" || _operatorName == "") exitWith {false};
 
 _dummy = createVehicle ["B_Soldier_F", [0,0,0], [], 0, "NONE"];
 [_dummy, [profileNamespace, _gearName]] call BIS_fnc_loadInventory;
@@ -32,7 +39,9 @@ _uniformArray = [
 [_backpack, _backpackItems] // Backpack ((_array select 2) select 0), gear ((_array select 2) select 1)
 ];
 
-profileNamespace setVariable [(format ["%1_gear_containers",_operatorName]),_uniformArray];
+if (isNil "_containerVar" || _overwrite) then {
+profileNamespace setVariable [_containerVar,_uniformArray];
+};
 
 _primaryWeapon = primaryWeapon _dummy; // Rifle
 _secondaryWeapon = secondaryWeapon _dummy; // Launcher
@@ -52,4 +61,8 @@ _gunsArray = [
 [_handgunWeapon, _handgunItems, _handgunMagazine] // Handgun ((_array select 2) select 0), attachments ((_array select 2) select 1), mag type ((_array select 2) select 2)
 ];
 
-profileNamespace setVariable [(format ["%1_gear_weapons",_operatorName]), _gunsArray];
+if (isNil "_weaponVar" || _overwrite) then {
+profileNamespace setVariable [_weaponVar, _gunsArray];
+};
+
+true
