@@ -1,3 +1,9 @@
+Operator files are composed of variables only, ending in a function call to add them to global namespace.
+Your file can be named anything, however do make sure you add the file name to operatorlist.sqf found in \operators\ folder. 
+Only copy the content below the line.
+
+======================================
+
 // Name: James 'King' Kingsley
 // Class: Officer
 // Gear: Standard MX 6.5 mm (for gear view later)
@@ -16,8 +22,8 @@ General: 0.5
 private ["_name","_class","_gear","_stats","_picture"];
 _name = "James 'King' Kingsley";
 _class = "Officer";
-_gear = "greatscott";
+_gear = "kingsley_gear"; // _gear variable needs an ARSENAL LOADOUT NAME. That means you will have to create a specific loadout in arsenal first and then copy the SAVE NAME (ie "kingsley_gear") into the _gear variable.
 _stats = [0.6,0.3,0.9,1,0.4,0.1,1,0.5,1,0.5]; // Stats in order of setSkill array command. More info here: https://community.bistudio.com/wiki/setSkill_array
-_picture = "operatorlist\img\o-image.jpg"; // Images saved in img\ folder
+_picture = "operatorlist\img\no-image.jpg"; // Images saved in img\ folder
 
 [_name, _class, _gear, _stats, _picture] call ARC_fnc_addOperatorToNamespace;

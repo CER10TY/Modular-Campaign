@@ -12,3 +12,6 @@
 
 // Operator Gear View
 #include "operatorlist\gearview\dialogs.hpp"
+
+// Operator Change Gear View
+#include "operatorlist\gearview\change_gear\dialogs.hpp"

@@ -17,6 +17,11 @@ if (count _operators == 0) exitWith {};
 
 _sequence = 0;
 
+// Clear LB
+for "_x" from 0 to 3 do {
+	lbClear (_idc select _x);
+};
+
 for "_i" from 0 to (count _operators) - 1 do {
 	private ["_name","_operatorName","_index"];
 	_name = format ["%1_name", (_operators select _i)];

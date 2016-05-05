@@ -16,7 +16,7 @@ NOTHING
 private ["_name","_class","_gear","_stats","_picture","_uniqueName","_profileName","_profileClass","_profileGear","_profilePicture","_operators"];
 _name = param [0, "", [""]];
 _class = param [1, "", [""]];
-_gear = param [2, [], [], []];
+_gear = param [2, "", [""]];
 _stats = param [3, [(random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1)], [], 10];
 _picture = param [4, "", [""]];
 
@@ -29,8 +29,7 @@ profileNamespace setVariable [_profileName, _name];
 _profileClass = format ["%1_class",_uniqueName];
 profileNamespace setVariable [_profileClass, _class];
 // Gear
-_profileGear = format ["%1_gear",_uniqueName];
-profileNamespace setVariable [_profileGear, _gear];
+[_gear,_uniqueName] call ARC_fnc_handleDummyLoadout;
 // Stats
 {
 	_stat = format ["%1_%2",_uniqueName,_x];

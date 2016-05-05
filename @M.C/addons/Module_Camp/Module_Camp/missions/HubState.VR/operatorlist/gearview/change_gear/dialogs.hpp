@@ -1,12 +1,12 @@
-class ARC_Operator_Gear_View {
-	idd = 5502;
+class ARC_Operator_GearChange_View {
+	idd = 5503;
 	movingenable = false;
-	onLoad = "nul = _this execVM 'operatorlist\gearview\dialog_init.sqf'";
+	onLoad = "nul = _this execVM 'operatorlist\gearview\change_gear\dialog_init.sqf'";
 controls[]=
 {
 	GUI_BACK,
 	TXT_OP_LIST,
-	BTN_VIEW_CLASS,
+	BTN_VIEW_GEAR,
 	COMBO_OP1_SELECT,
 	COMBO_OP2_SELECT,
 	COMBO_OP3_SELECT,
@@ -46,20 +46,21 @@ class TXT_OP_LIST: RscText
 	h = 0.055 * safezoneH;
 	sizeEx = 0.08;
 };
-class BTN_VIEW_CLASS: RscButton
+class BTN_VIEW_GEAR: RscButton
 {
 	idc = 1600;
-	action = "closeDialog 1; createDialog 'ARC_Operator_View'";
-	text = "Class View"; //--- ToDo: Localize;
+	action = "closeDialog 1; createDialog 'ARC_Operator_Gear_View'";
+	text = "Gear View"; //--- ToDo: Localize;
 	x = 0.314375 * safezoneW + safezoneX;
 	y = 0.72 * safezoneH + safezoneY;
 	w = 0.0515625 * safezoneW;
 	h = 0.022 * safezoneH;
-	tooltip = "View a brief description of your operators"; //--- ToDo: Localize;
+	tooltip = "View the gear of your operators"; //--- ToDo: Localize;
 };
 class COMBO_OP1_SELECT: RscCombo
 {
 	idc = 2100;
+
 	x = 0.314375 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0876563 * safezoneW;
@@ -69,6 +70,7 @@ class COMBO_OP1_SELECT: RscCombo
 class COMBO_OP2_SELECT: RscCombo
 {
 	idc = 2101;
+
 	x = 0.407187 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0876563 * safezoneW;
@@ -78,6 +80,7 @@ class COMBO_OP2_SELECT: RscCombo
 class COMBO_OP3_SELECT: RscCombo
 {
 	idc = 2102;
+
 	x = 0.5 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0876563 * safezoneW;
@@ -87,6 +90,7 @@ class COMBO_OP3_SELECT: RscCombo
 class COMBO_OP4_SELECT: RscCombo
 {
 	idc = 2103;
+
 	x = 0.592812 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0876563 * safezoneW;
@@ -149,7 +153,6 @@ class LIST_OP4_GEAR: RscListbox
 class BTN_OP1_CHANGEGEAR: RscButton
 {
 	idc = 1603;
-	action = "closeDialog 1; createDialog 'ARC_Operator_GearChange_View'";
 	text = "Change gear"; //--- ToDo: Localize;
 	x = 0.314375 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
@@ -160,7 +163,6 @@ class BTN_OP1_CHANGEGEAR: RscButton
 class BTN_OP2_CHANGEGEAR: RscButton
 {
 	idc = 1604;
-	action = "closeDialog 1; createDialog 'ARC_Operator_GearChange_View'";
 	text = "Change gear"; //--- ToDo: Localize;
 	x = 0.407187 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
@@ -171,7 +173,6 @@ class BTN_OP2_CHANGEGEAR: RscButton
 class BTN_OP3_CHANGEGEAR: RscButton
 {
 	idc = 1605;
-	action = "closeDialog 1; createDialog 'ARC_Operator_GearChange_View'";
 	text = "Change gear"; //--- ToDo: Localize;
 	x = 0.5 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
@@ -182,7 +183,6 @@ class BTN_OP3_CHANGEGEAR: RscButton
 class BTN_OP4_CHANGEGEAR: RscButton
 {
 	idc = 1606;
-	action = "closeDialog 1; createDialog 'ARC_Operator_GearChange_View'";
 	text = "Change gear"; //--- ToDo: Localize;
 	x = 0.592812 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
