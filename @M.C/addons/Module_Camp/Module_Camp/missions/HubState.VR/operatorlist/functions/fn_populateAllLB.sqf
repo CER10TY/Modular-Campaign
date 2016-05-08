@@ -9,8 +9,13 @@ Parameters:
 Returns:
 NOTHING
 */
+
+/* common function header */
+#include "..\..\arc_common.hpp"
+/* common function header end */
+
 private ["_idc","_operators","_sequence"];
-_idc = param [0, [], []];
+_idc = OPERATOR_SELECT_CONTROLS;
 _operators = profileNamespace getVariable ["operators",[]];
 
 if (count _operators == 0) exitWith {};

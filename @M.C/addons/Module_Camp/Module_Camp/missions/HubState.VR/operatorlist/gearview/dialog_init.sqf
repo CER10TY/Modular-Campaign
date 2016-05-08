@@ -1,22 +1,15 @@
-((findDisplay 5502) displayCtrl 2100) ctrlRemoveAllEventHandlers "LBSelChanged";
-((findDisplay 5502) displayCtrl 2101) ctrlRemoveAllEventHandlers "LBSelChanged";
-((findDisplay 5502) displayCtrl 2102) ctrlRemoveAllEventHandlers "LBSelChanged";
-((findDisplay 5502) displayCtrl 2103) ctrlRemoveAllEventHandlers "LBSelChanged";
+/* common function header */
+#include "..\..\arc_common.hpp"
+/* common function header end */
 
-((findDisplay 5502) displayCtrl 1603) ctrlRemoveAllEventHandlers "ButtonDown";
-((findDisplay 5502) displayCtrl 1604) ctrlRemoveAllEventHandlers "ButtonDown";
-((findDisplay 5502) displayCtrl 1605) ctrlRemoveAllEventHandlers "ButtonDown";
-((findDisplay 5502) displayCtrl 1606) ctrlRemoveAllEventHandlers "ButtonDown";
+/* DISPLAY(5502, 2100) ctrlRemoveAllEventHandlers "LBSelChanged";
+DISPLAY(5502, 2101) ctrlRemoveAllEventHandlers "LBSelChanged";
+DISPLAY(5502, 2102) ctrlRemoveAllEventHandlers "LBSelChanged";
+DISPLAY(5502, 2103) ctrlRemoveAllEventHandlers "LBSelChanged"; */
 
-[[2100,2101,2102,2103]] call ARC_fnc_populateAllLB;
+[OPERATOR_SELECT_CONTROLS] call ARC_fnc_populateAllLB;
 
-((findDisplay 5502) displayCtrl 2100) ctrlAddEventHandler ["LBSelChanged", {_this call ARC_fnc_handleGearList}];
-((findDisplay 5502) displayCtrl 2101) ctrlAddEventHandler ["LBSelChanged", {_this call ARC_fnc_handleGearList}];
-((findDisplay 5502) displayCtrl 2102) ctrlAddEventHandler ["LBSelChanged", {_this call ARC_fnc_handleGearList}];
-((findDisplay 5502) displayCtrl 2103) ctrlAddEventHandler ["LBSelChanged", {_this call ARC_fnc_handleGearList}];
-
-// This is arguably better than bouncing the ctrlIDC through 2 functions.
-((findDisplay 5502) displayCtrl 1603) ctrlAddEventHandler ["ButtonDown", {missionNamespace setVariable ["gear_button_clicked",[_this select 0, 0]]}];
-((findDisplay 5502) displayCtrl 1604) ctrlAddEventHandler ["ButtonDown", {missionNamespace setVariable ["gear_button_clicked",[_this select 0, 1]]}];
-((findDisplay 5502) displayCtrl 1605) ctrlAddEventHandler ["ButtonDown", {missionNamespace setVariable ["gear_button_clicked",[_this select 0, 2]]}];
-((findDisplay 5502) displayCtrl 1606) ctrlAddEventHandler ["ButtonDown", {missionNamespace setVariable ["gear_button_clicked",[_this select 0, 3]]}];
+/* DISPLAY(5502, 2100) ctrlSetEventHandler ["LBSelChanged","_this call ARC_fnc_handleGearList"];
+DISPLAY(5502, 2101) ctrlSetEventHandler ["LBSelChanged","_this call ARC_fnc_handleGearList"];
+DISPLAY(5502, 2102) ctrlSetEventHandler ["LBSelChanged","_this call ARC_fnc_handleGearList"];
+DISPLAY(5502, 2103) ctrlSetEventHandler ["LBSelChanged","_this call ARC_fnc_handleGearList"]; */

@@ -1,7 +1,7 @@
 class ARC_Mission_View {
 	idd = 5501;
 	movingenable = false;
-	onLoad = "nul = [] execVM 'missionlist\dialog_init.sqf'";
+	onLoad = "[] execVM 'missionlist\dialog_init.sqf'";
 controls[]=
 {
 	GUI_BACK,

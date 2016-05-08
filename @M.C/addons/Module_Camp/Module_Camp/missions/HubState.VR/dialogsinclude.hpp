@@ -2,7 +2,7 @@
 // Make sure to COMMENT to distinguish the different dialogs
 // You only need one defines.hpp! All parent classes for all dialogs are the same, and you should instead edit child classes if any modifications are necessary.
 
-#include "defines.hpp"
+#include "dialog_defines.hpp"
 
 // Mission List View
 #include "missionlist\dialogs.hpp"

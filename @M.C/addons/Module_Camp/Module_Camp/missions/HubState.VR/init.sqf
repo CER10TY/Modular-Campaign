@@ -12,8 +12,6 @@ if (round(random 100) < 35) then {[(getmarkerpos "flyby_plane1"), (getmarkerpos 
 	]
 ] spawn BIS_fnc_typeText2;
 
-
-
 [] spawn {
 private "_trig";
 sleep 1;

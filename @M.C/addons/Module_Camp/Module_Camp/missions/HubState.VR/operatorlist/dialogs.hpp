@@ -1,7 +1,7 @@
 class ARC_Operator_View {
 	idd = 5500;
 	movingenable = false;
-	onLoad = "nul = _this execVM 'operatorlist\dialog_init.sqf'";
+	onLoad = "[] execVM 'operatorlist\dialog_init.sqf'";
 controls[]=
 {
 	GUI_BACK,
@@ -99,6 +99,7 @@ class COMBO_OP1_SELECT: RscCombo
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 1"; //--- ToDo: Localize;
+	onLBSelChanged = "_this call ARC_fnc_handleOperator";
 };
 class COMBO_OP2_SELECT: RscCombo
 {
@@ -108,6 +109,7 @@ class COMBO_OP2_SELECT: RscCombo
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 2"; //--- ToDo: Localize;
+	onLBSelChanged = "_this call ARC_fnc_handleOperator";
 };
 class COMBO_OP3_SELECT: RscCombo
 {
@@ -117,6 +119,7 @@ class COMBO_OP3_SELECT: RscCombo
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 3"; //--- ToDo: Localize;
+	onLBSelChanged = "_this call ARC_fnc_handleOperator";
 };
 class COMBO_OP4_SELECT: RscCombo
 {
@@ -126,6 +129,7 @@ class COMBO_OP4_SELECT: RscCombo
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 4"; //--- ToDo: Localize;
+	onLBSelChanged = "_this call ARC_fnc_handleOperator";
 };
 class BTN_VIEW_STATS: RscButton
 {
@@ -151,6 +155,7 @@ class BTN_EXIT: RscButton
 class TXT_OP1_CLASS: RscText
 {
 	idc = 1001;
+	style  = 2;
 	x = 0.319531 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -159,6 +164,7 @@ class TXT_OP1_CLASS: RscText
 class TXT_OP2_CLASS: RscText
 {
 	idc = 1002;
+	style  = 2;
 	x = 0.412344 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -167,7 +173,7 @@ class TXT_OP2_CLASS: RscText
 class TXT_OP3_CLASS: RscText
 {
 	idc = 1003;
-
+	style  = 2;
 	x = 0.505156 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;
@@ -176,6 +182,7 @@ class TXT_OP3_CLASS: RscText
 class TXT_OP4_CLASS: RscText
 {
 	idc = 1004;
+	style  = 2;
 	x = 0.597969 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
 	w = 0.0773437 * safezoneW;

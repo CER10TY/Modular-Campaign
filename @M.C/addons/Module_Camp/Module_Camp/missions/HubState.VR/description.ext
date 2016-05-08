@@ -4,6 +4,7 @@ class CfgFunctions
 {
 	class ARC // Identifier, same for all official scripts
 	{
+		#include "functions\config.hpp"
 		#include "missionlist\functions\config.hpp"
 		#include "operatorlist\functions\config.hpp"
 		#include "operatorlist\gearview\functions\config.hpp"

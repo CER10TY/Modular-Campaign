@@ -11,19 +11,21 @@ Returns:
 NOTHING
 */
 
+/* common function header */
+#include "..\..\..\arc_common.hpp"
+/* common function header end */
+
 private ["_ctrlLB","_index","_ctrlLBList","_operator","_containers","_weapons","_currentLB","_forIndex"];
 
 _ctrlLB = param [0, controlNull, [controlNull]];
 _index = param [1, 0, [0]];
-
-_ctrlLBList = [1500, 1501, 1502, 1503];
 
 if (isNull _ctrlLB) exitWith {};
 _operator = _ctrlLB lbData _index;
 _containers = profileNamespace getVariable (format ["%1_gear_containers",_operator]);
 _weapons = profileNamespace getVariable (format ["%1_gear_weapons",_operator]);
 
-_currentLB = _ctrlLBList select (_ctrlLB lbValue _index);
+_currentLB = SELECT_VALUE(OPERATOR_GEAR_SELECT_CTRL,(_ctrlLB lbValue _index));
 //hint format ["Current LB: %1 + %2",_currentLB, floor(random 50)];
 lbClear _currentLB;
 

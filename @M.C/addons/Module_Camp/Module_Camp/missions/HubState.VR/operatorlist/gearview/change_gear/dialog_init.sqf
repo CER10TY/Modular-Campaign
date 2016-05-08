@@ -1,13 +1,16 @@
-((findDisplay 5503) displayCtrl 2100) ctrlRemoveAllEventHandlers "LBSelChanged";
-((findDisplay 5503) displayCtrl 2101) ctrlRemoveAllEventHandlers "LBSelChanged";
-((findDisplay 5503) displayCtrl 2102) ctrlRemoveAllEventHandlers "LBSelChanged";
-((findDisplay 5503) displayCtrl 2103) ctrlRemoveAllEventHandlers "LBSelChanged";
+/* common function header */
+#include "..\..\..\arc_common.hpp"
+/* common function header end */
 
-[[2100,2101,2102,2103]] call ARC_fnc_populateAllLB;
-
-((findDisplay 5503) displayCtrl 2100) ctrlAddEventHandler ["LBSelChanged", {_this call ARC_fnc_handleGearList}];
-((findDisplay 5503) displayCtrl 2101) ctrlAddEventHandler ["LBSelChanged", {_this call ARC_fnc_handleGearList}];
-((findDisplay 5503) displayCtrl 2102) ctrlAddEventHandler ["LBSelChanged", {_this call ARC_fnc_handleGearList}];
-((findDisplay 5503) displayCtrl 2103) ctrlAddEventHandler ["LBSelChanged", {_this call ARC_fnc_handleGearList}];
-
+/* DISPLAY(5503, 2100) ctrlRemoveAllEventHandlers "LBSelChanged";
+DISPLAY(5503, 2101) ctrlRemoveAllEventHandlers "LBSelChanged";
+DISPLAY(5503, 2102) ctrlRemoveAllEventHandlers "LBSelChanged";
+DISPLAY(5503, 2103) ctrlRemoveAllEventHandlers "LBSelChanged";
+ */
+[OPERATOR_SELECT_CONTROLS] call ARC_fnc_populateAllLB;
 "populate" call ARC_fnc_changeGear;
+
+/* DISPLAY(5503, 2100) ctrlSetEventHandler ["LBSelChanged","_this call ARC_fnc_handleGearList"];
+DISPLAY(5503, 2101) ctrlSetEventHandler ["LBSelChanged","_this call ARC_fnc_handleGearList"];
+DISPLAY(5503, 2102) ctrlSetEventHandler ["LBSelChanged","_this call ARC_fnc_handleGearList"];
+DISPLAY(5503, 2103) ctrlSetEventHandler ["LBSelChanged","_this call ARC_fnc_handleGearList"]; */

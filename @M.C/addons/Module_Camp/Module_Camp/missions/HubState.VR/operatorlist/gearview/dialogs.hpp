@@ -1,7 +1,7 @@
 class ARC_Operator_Gear_View {
 	idd = 5502;
 	movingenable = false;
-	onLoad = "nul = _this execVM 'operatorlist\gearview\dialog_init.sqf'";
+	onLoad = "[] execVM 'operatorlist\gearview\dialog_init.sqf'";
 controls[]=
 {
 	GUI_BACK,
@@ -65,6 +65,7 @@ class COMBO_OP1_SELECT: RscCombo
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 1"; //--- ToDo: Localize;
+	onLBSelChanged = "_this call ARC_fnc_handleGearList";
 };
 class COMBO_OP2_SELECT: RscCombo
 {
@@ -74,6 +75,7 @@ class COMBO_OP2_SELECT: RscCombo
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 2"; //--- ToDo: Localize;
+	onLBSelChanged = "_this call ARC_fnc_handleGearList";
 };
 class COMBO_OP3_SELECT: RscCombo
 {
@@ -83,6 +85,7 @@ class COMBO_OP3_SELECT: RscCombo
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 3"; //--- ToDo: Localize;
+	onLBSelChanged = "_this call ARC_fnc_handleGearList";
 };
 class COMBO_OP4_SELECT: RscCombo
 {
@@ -92,6 +95,7 @@ class COMBO_OP4_SELECT: RscCombo
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 4"; //--- ToDo: Localize;
+	onLBSelChanged = "_this call ARC_fnc_handleGearList";
 };
 class BTN_VIEW_STATS: RscButton
 {
@@ -156,6 +160,7 @@ class BTN_OP1_CHANGEGEAR: RscButton
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Change the gear of operator 1"; //--- ToDo: Localize;
+	onButtonDown = "missionNamespace setVariable ['gear_button_clicked',[_this select 0, 0]]";
 };
 class BTN_OP2_CHANGEGEAR: RscButton
 {
@@ -167,6 +172,7 @@ class BTN_OP2_CHANGEGEAR: RscButton
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Change the gear of operator 2"; //--- ToDo: Localize;
+	onButtonDown = "missionNamespace setVariable ['gear_button_clicked',[_this select 0, 1]]";
 };
 class BTN_OP3_CHANGEGEAR: RscButton
 {
@@ -178,6 +184,7 @@ class BTN_OP3_CHANGEGEAR: RscButton
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Change the gear of operator 3"; //--- ToDo: Localize;
+	onButtonDown = "missionNamespace setVariable ['gear_button_clicked',[_this select 0, 2]]";
 };
 class BTN_OP4_CHANGEGEAR: RscButton
 {
@@ -189,6 +196,7 @@ class BTN_OP4_CHANGEGEAR: RscButton
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Change the gear of operator 4"; //--- ToDo: Localize;
+	onButtonDown = "missionNamespace setVariable ['gear_button_clicked',[_this select 0, 3]]";
 };
 ////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT END
