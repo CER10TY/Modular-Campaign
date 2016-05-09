@@ -11,6 +11,7 @@ RETURNS
 
 private["_displayName","_default","_out","_cfgWeapons","_cfgMagazines","_cfgVehicles","_configs","_cfgAmmo","_cfgGlasses"]; 
 
+scopeName "main";
 
 _default = param [0, "", [""]];
 if (_default == "") exitWith {_default};
@@ -29,11 +30,9 @@ _configs = [_cfgAmmo, _cfgWeapons, _cfgMagazines, _cfgVehicles, _cfgGlasses];
 			if (_default == configName(_x select _i)) exitWith {
 				_out = configName (_x);
 			}; 
-			if (_out != "") exitWith {_out}; // Trickle dowwwwwwwwn..
+			if (_out != "") then {breakTo "main"};
 		};
-		if (_out != "") exitWith {_out};
 	}; 
-	if (_out != "") exitWith {_out};
 } foreach _configs;
 
 _out 
