@@ -1,5 +1,5 @@
 /*
-Author: tryteyker (last rev 2016-05-03)
+Author: tryteyker (last rev 2016-05-09)
 Function that handles picture and class description in UI.
 
 Parameters:
@@ -20,10 +20,10 @@ _index = param [1, 0, [0]];
 if (isNull _ctrlLB) exitWith {};
 
 _operator = _ctrlLB lbData _index;
-_operatorPicture = profileNamespace getVariable (format ["%1_picture",_operator]);
+_operatorPicture = profileNamespace getVariable (format ["%1_picture",_operator]); // Pull data from profileNamespace
 _operatorClass = profileNamespace getVariable (format ["%1_class",_operator]);
-_ctrlPic = SELECT_VALUE(OPERATOR_PICTURE_CONTROLS, (_ctrlLB lbValue _index));
+_ctrlPic = SELECT_VALUE(OPERATOR_PICTURE_CONTROLS, (_ctrlLB lbValue _index)); // Macros
 _ctrlText = SELECT_VALUE(OPERATOR_CLASS_CONTROLS, (_ctrlLB lbValue _index));
 
-ctrlSetText [_ctrlPic, _operatorPicture];
+ctrlSetText [_ctrlPic, _operatorPicture]; // Set text and picture on relevant controls.
 ctrlSetText [_ctrlText, _operatorClass];

@@ -1,5 +1,5 @@
 /*
-Author: tryteyker (last rev 2016-05-04)
+Author: tryteyker (last rev 2016-05-09)
 Function to populate listbox with all saved arsenal loadouts. Only changes selected operators' listbox, rest remains untouched.
 Also saves gear once button is pressed.
 
@@ -24,14 +24,14 @@ switch (_param) do {
 	{
 		private ["_ctrlLBList","_opList","_buttonClicked","_buttonCtrl","_currentLB","_savedLoadouts"];
 		disableSerialization;
-		_buttonClicked = (missionNamespace getVariable "gear_button_clicked") select 1;
-		_buttonCtrl = ctrlIDC ((missionNamespace getVariable "gear_button_clicked") select 0);
-		_currentOP = SELECT_VALUE(OPERATOR_SELECT_CONTROLS,_buttonClicked);
-		DISPLAY(5503, _currentOP) ctrlEnable false;
-		_currentLB = SELECT_VALUE(OPERATOR_GEAR_SELECT_CTRL,_buttonClicked);
+		_buttonClicked = (missionNamespace getVariable "gear_button_clicked") select 1; // Number ranging from 0 to 3 depending on what button was clicked.
+		_buttonCtrl = ctrlIDC ((missionNamespace getVariable "gear_button_clicked") select 0); // Control name of button that was clicked. (ranging from Control #1603 to Control #1606)
+		_currentOP = SELECT_VALUE(OPERATOR_SELECT_CONTROLS,_buttonClicked); // Macro defined in common.hpp, operator select combobox
+		DISPLAY(5503, _currentOP) ctrlEnable false; // This works only first time around - afterwards (presumably) dialog idd/control idc is not read correctly.
+		_currentLB = SELECT_VALUE(OPERATOR_GEAR_SELECT_CTRL,_buttonClicked); // Gear listbox
 		lbClear _currentLB;
-		_savedLoadouts = call ARC_fnc_extractSavenames;
-		for "_i" from 0 to ((count _savedLoadouts) - 1) do {
+		_savedLoadouts = call ARC_fnc_extractSavenames; // Extracts all savenames (strings only) from Arsenal (BIS_fnc_saveInventory_data) to populate LB. Returns array with strings.
+		for "_i" from 0 to ((count _savedLoadouts) - 1) do { // Adds both string and data to relevant lb index, iterating through all saved loadouts.
 			lbAdd [_currentLB,_savedLoadouts select _i];
 			lbSetData [_currentLB, _i, _savedLoadouts select _i];
 		};
@@ -43,9 +43,9 @@ switch (_param) do {
 	{
 		private ["_ctrlLBList","_buttonClicked","_currentLB","_opList","_currentOP","_currentOperator","_selectedLoadout"];
 		disableSerialization;
-		_buttonClicked = (missionNamespace getVariable "gear_button_clicked") select 1;
+		_buttonClicked = (missionNamespace getVariable "gear_button_clicked") select 1; // Number ranging from 0 to 3 depending on what button was clicked.
 		_currentLB = SELECT_VALUE(OPERATOR_GEAR_SELECT_CTRL,_buttonClicked); // Gear listbox
-		_currentOP = SELECT_VALUE(OPERATOR_SELECT_CONTROLS,_buttonClicked);
+		_currentOP = SELECT_VALUE(OPERATOR_SELECT_CONTROLS,_buttonClicked); // Operator combobox
 		_currentOperator = lbData [_currentOP, lbCurSel _currentOP]; // Operator
 		_selectedLoadout = lbData [_currentLB, lbCurSel _currentLB];
 		lbClear _currentLB; // Double clear for the lb, just for safety. It also gets cleared in fn_handleGear.
