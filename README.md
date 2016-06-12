@@ -23,6 +23,7 @@ Released **2016-06-12**
 
 **ADDED:**
 * You can now select specific operators' gear from a drop-down menu. Gear is pulled from loadouts you saved in Arsenal.
+
 **CHANGED:**
 * Various changes and fixes.
 
