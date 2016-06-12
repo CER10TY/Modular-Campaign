@@ -1,5 +1,5 @@
-<p align="center">
 <h1>Modular Campaign Framework</h1>
+<p align="center">
 <a href="https://github.com/CER10TY/Modular-Campaign/releases">
 	<img src="https://img.shields.io/github/release/CER10TY/Modular-Campaign.svg" />
 </a>
