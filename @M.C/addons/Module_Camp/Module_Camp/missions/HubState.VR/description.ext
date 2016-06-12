@@ -1,11 +1,15 @@
-#include "masterinclude.hpp"
+#include "dialogsinclude.hpp"
 
 class CfgFunctions 
 {
 	class ARC // Identifier, same for all official scripts
 	{
+		#include "functions\config.hpp"
 		#include "missionlist\functions\config.hpp"
 		#include "operatorlist\functions\config.hpp"
+		#include "operatorlist\gearview\functions\config.hpp"
+		#include "operatorlist\gearview\change_gear\functions\config.hpp"
+		#include "operatorlist\statsview\functions\config.hpp"
 	};
 };
 

@@ -1,34 +1,35 @@
-class ARC_Operator_View {
-	idd = 5500;
+class ARC_Operator_GearChange_View {
+	idd = 5503;
 	movingenable = false;
-	onLoad = "[] execVM 'operatorlist\dialog_init.sqf'";
+	onLoad = "[] execVM 'operatorlist\gearview\change_gear\dialog_init.sqf'";
 controls[]=
 {
 	GUI_BACK,
 	TXT_OP_LIST,
-	PIC_OP1,
 	BTN_VIEW_GEAR,
-	PIC_OP2,
-	PIC_OP3,
-	PIC_OP4,
 	COMBO_OP1_SELECT,
 	COMBO_OP2_SELECT,
 	COMBO_OP3_SELECT,
 	COMBO_OP4_SELECT,
 	BTN_VIEW_STATS,
 	BTN_EXIT,
-	TXT_OP1_CLASS,
-	TXT_OP2_CLASS,
-	TXT_OP3_CLASS,
-	TXT_OP4_CLASS
+	LIST_OP1_GEAR,
+	LIST_OP2_GEAR,
+	LIST_OP3_GEAR,
+	LIST_OP4_GEAR,
+	BTN_OP1_CHANGEGEAR,
+	BTN_OP2_CHANGEGEAR,
+	BTN_OP3_CHANGEGEAR,
+	BTN_OP4_CHANGEGEAR
 };
 ////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by tryteyker, v1.063, #Civicu)
+// GUI EDITOR OUTPUT START (by tryteyker, v1.063, #Cimily)
 ////////////////////////////////////////////////////////
 
 class GUI_BACK: IGUIBack
 {
 	idc = 2200;
+
 	x = 0.304062 * safezoneW + safezoneX;
 	y = 0.247 * safezoneH + safezoneY;
 	w = 0.386719 * safezoneW;
@@ -37,21 +38,13 @@ class GUI_BACK: IGUIBack
 class TXT_OP_LIST: RscText
 {
 	idc = 1000;
+
 	text = "CURRENT OPERATORS"; //--- ToDo: Localize;
 	x = 0.407187 * safezoneW + safezoneX;
 	y = 0.258 * safezoneH + safezoneY;
 	w = 0.180469 * safezoneW;
 	h = 0.055 * safezoneH;
 	sizeEx = 0.08;
-};
-class PIC_OP1: RscPicture
-{
-	idc = 1200;
-	text = "operatorlist\img\o-image.jpg";
-	x = 0.314375 * safezoneW + safezoneX;
-	y = 0.368 * safezoneH + safezoneY;
-	w = 0.0876563 * safezoneW;
-	h = 0.308 * safezoneH;
 };
 class BTN_VIEW_GEAR: RscButton
 {
@@ -64,77 +57,53 @@ class BTN_VIEW_GEAR: RscButton
 	h = 0.022 * safezoneH;
 	tooltip = "View the gear of your operators"; //--- ToDo: Localize;
 };
-class PIC_OP2: RscPicture
-{
-	idc = 1201;
-	text = "operatorlist\img\o-image.jpg";
-	x = 0.407187 * safezoneW + safezoneX;
-	y = 0.368 * safezoneH + safezoneY;
-	w = 0.0876563 * safezoneW;
-	h = 0.308 * safezoneH;
-};
-class PIC_OP3: RscPicture
-{
-	idc = 1202;
-	text = "operatorlist\img\o-image.jpg";
-	x = 0.5 * safezoneW + safezoneX;
-	y = 0.368 * safezoneH + safezoneY;
-	w = 0.0876563 * safezoneW;
-	h = 0.308 * safezoneH;
-};
-class PIC_OP4: RscPicture
-{
-	idc = 1203;
-	text = "operatorlist\img\o-image.jpg";
-	x = 0.592812 * safezoneW + safezoneX;
-	y = 0.368 * safezoneH + safezoneY;
-	w = 0.0876563 * safezoneW;
-	h = 0.308 * safezoneH;
-};
 class COMBO_OP1_SELECT: RscCombo
 {
 	idc = 2100;
+
 	x = 0.314375 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 1"; //--- ToDo: Localize;
-	onLBSelChanged = "_this call ARC_fnc_handleOperator";
+	onLBSelChanged = "_this call ARC_fnc_handleGearList";
 };
 class COMBO_OP2_SELECT: RscCombo
 {
 	idc = 2101;
+
 	x = 0.407187 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 2"; //--- ToDo: Localize;
-	onLBSelChanged = "_this call ARC_fnc_handleOperator";
+	onLBSelChanged = "_this call ARC_fnc_handleGearList";
 };
 class COMBO_OP3_SELECT: RscCombo
 {
 	idc = 2102;
+
 	x = 0.5 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 3"; //--- ToDo: Localize;
-	onLBSelChanged = "_this call ARC_fnc_handleOperator";
+	onLBSelChanged = "_this call ARC_fnc_handleGearList";
 };
 class COMBO_OP4_SELECT: RscCombo
 {
 	idc = 2103;
+
 	x = 0.592812 * safezoneW + safezoneX;
 	y = 0.335 * safezoneH + safezoneY;
 	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
 	tooltip = "Select Operator 4"; //--- ToDo: Localize;
-	onLBSelChanged = "_this call ARC_fnc_handleOperator";
+	onLBSelChanged = "_this call ARC_fnc_handleGearList";
 };
 class BTN_VIEW_STATS: RscButton
 {
 	idc = 1601;
-	action = "closeDialog 0; createDialog 'ARC_Operator_Stats_View'";
 	text = "Stats View"; //--- ToDo: Localize;
 	x = 0.37625 * safezoneW + safezoneX;
 	y = 0.72 * safezoneH + safezoneY;
@@ -153,41 +122,77 @@ class BTN_EXIT: RscButton
 	h = 0.022 * safezoneH;
 	tooltip = "This also saves your selection"; //--- ToDo: Localize;
 };
-class TXT_OP1_CLASS: RscText
+class LIST_OP1_GEAR: RscListbox
 {
-	idc = 1001;
-	style  = 2;
-	x = 0.319531 * safezoneW + safezoneX;
-	y = 0.687 * safezoneH + safezoneY;
-	w = 0.0773437 * safezoneW;
-	h = 0.022 * safezoneH;
+	idc = 1500;
+	x = 0.314375 * safezoneW + safezoneX;
+	y = 0.368 * safezoneH + safezoneY;
+	w = 0.0876563 * safezoneW;
+	h = 0.308 * safezoneH;
 };
-class TXT_OP2_CLASS: RscText
+class LIST_OP2_GEAR: RscListbox
 {
-	idc = 1002;
-	style  = 2;
-	x = 0.412344 * safezoneW + safezoneX;
-	y = 0.687 * safezoneH + safezoneY;
-	w = 0.0773437 * safezoneW;
-	h = 0.022 * safezoneH;
+	idc = 1501;
+	x = 0.407187 * safezoneW + safezoneX;
+	y = 0.368 * safezoneH + safezoneY;
+	w = 0.0876563 * safezoneW;
+	h = 0.308 * safezoneH;
 };
-class TXT_OP3_CLASS: RscText
+class LIST_OP3_GEAR: RscListbox
 {
-	idc = 1003;
-	style  = 2;
-	x = 0.505156 * safezoneW + safezoneX;
-	y = 0.687 * safezoneH + safezoneY;
-	w = 0.0773437 * safezoneW;
-	h = 0.022 * safezoneH;
+	idc = 1502;
+	x = 0.5 * safezoneW + safezoneX;
+	y = 0.368 * safezoneH + safezoneY;
+	w = 0.0876563 * safezoneW;
+	h = 0.308 * safezoneH;
 };
-class TXT_OP4_CLASS: RscText
+class LIST_OP4_GEAR: RscListbox
 {
-	idc = 1004;
-	style  = 2;
-	x = 0.597969 * safezoneW + safezoneX;
+	idc = 1503;
+	x = 0.592812 * safezoneW + safezoneX;
+	y = 0.368 * safezoneH + safezoneY;
+	w = 0.0876563 * safezoneW;
+	h = 0.308 * safezoneH;
+};
+class BTN_OP1_CHANGEGEAR: RscButton
+{
+	idc = 1603;
+	text = "Change gear"; //--- ToDo: Localize;
+	x = 0.314375 * safezoneW + safezoneX;
 	y = 0.687 * safezoneH + safezoneY;
-	w = 0.0773437 * safezoneW;
+	w = 0.0876563 * safezoneW;
 	h = 0.022 * safezoneH;
+	tooltip = "Change the gear of operator 1"; //--- ToDo: Localize;
+};
+class BTN_OP2_CHANGEGEAR: RscButton
+{
+	idc = 1604;
+	text = "Change gear"; //--- ToDo: Localize;
+	x = 0.407187 * safezoneW + safezoneX;
+	y = 0.687 * safezoneH + safezoneY;
+	w = 0.0876563 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Change the gear of operator 2"; //--- ToDo: Localize;
+};
+class BTN_OP3_CHANGEGEAR: RscButton
+{
+	idc = 1605;
+	text = "Change gear"; //--- ToDo: Localize;
+	x = 0.5 * safezoneW + safezoneX;
+	y = 0.687 * safezoneH + safezoneY;
+	w = 0.0876563 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Change the gear of operator 3"; //--- ToDo: Localize;
+};
+class BTN_OP4_CHANGEGEAR: RscButton
+{
+	idc = 1606;
+	text = "Change gear"; //--- ToDo: Localize;
+	x = 0.592812 * safezoneW + safezoneX;
+	y = 0.687 * safezoneH + safezoneY;
+	w = 0.0876563 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Change the gear of operator 4"; //--- ToDo: Localize;
 };
 ////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT END
