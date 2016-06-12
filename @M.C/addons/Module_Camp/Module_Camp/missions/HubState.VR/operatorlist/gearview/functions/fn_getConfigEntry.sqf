@@ -1,5 +1,5 @@
 /*
-Author: Hypnomatic and iceman77, revised by tryteyker (last 2016-05-09). Original script: https://forums.bistudio.com/topic/139602-from-display-name-to-classname/?p=2519425
+Author: Hypnomatic and iceman77, revised by tryteyker (last rev 2016-05-19). Original script: https://forums.bistudio.com/topic/139602-from-display-name-to-classname/?p=2519425
 Function to grab specific config entry for specified item. Iterates through all configs seperately until it finds relevant item.
 
 Parameters:

@@ -1,4 +1,4 @@
-// Name: Derek 'Try' Smalls
+// Name: Derek 'Try' Kingsley
 // Class: Squad Leader
 // Gear: Standard MX 6.5 mm (for gear view later)
 /* Stats:
@@ -14,7 +14,7 @@ Commanding: 1
 General: 0.5
 */
 private ["_name","_class","_gear","_stats","_picture"];
-_name = "Derek 'Try' Smalls";
+_name = "Derek 'Try' Kingsley";
 _class = "Squad Leader";
 _gear = "greatscott";
 _stats = [0.6,0.3,0.9,1,0.4,0.1,1,0.5,1,0.5]; // Stats in order of setSkill array command. More info here: https://community.bistudio.com/wiki/setSkill_array

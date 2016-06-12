@@ -1049,23 +1049,19 @@ class RscSlider
 	deletable = 0;
 	fade = 0;
 	access = 0;
-	type = 3;
-	style = 1024;
-	color[] = 
-	{
-		1,
-		1,
-		1,
-		0.8
-	};
-	colorActive[] = 
-	{
-		1,
-		1,
-		1,
-		1
-	};
-	shadow = 0;
+	type = CT_XSLIDER;
+	style = SL_HORZ;
+	color[] = {1, 1, 1, 1};
+    colorDisabled[] = {1, 1, 1, 0.5};
+    colorActive[] = {1, 1, 1, 1};
+    tooltip = "";
+    tooltipColorShade[] = {0, 0, 0, 1};
+    tooltipColorText[] = {1, 1, 1, 1};
+    tooltipColorBox[] = {0, 0, 0, 1};
+    arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
+    arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
+    border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
+    thumb = "#(argb,8,8,3)color(1,1,1,1)";
 	x = 0;
 	y = 0;
 	w = 0.3;

@@ -15,3 +15,6 @@
 
 // Operator Change Gear View
 #include "operatorlist\gearview\change_gear\dialogs.hpp"
+
+// Operator Stats View
+#include "operatorlist\statsview\dialogs.hpp"

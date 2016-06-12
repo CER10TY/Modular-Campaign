@@ -9,6 +9,7 @@ class CfgFunctions
 		#include "operatorlist\functions\config.hpp"
 		#include "operatorlist\gearview\functions\config.hpp"
 		#include "operatorlist\gearview\change_gear\functions\config.hpp"
+		#include "operatorlist\statsview\functions\config.hpp"
 	};
 };
 

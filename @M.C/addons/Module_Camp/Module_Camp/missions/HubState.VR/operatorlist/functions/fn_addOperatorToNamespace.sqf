@@ -17,7 +17,7 @@ private ["_name","_class","_gear","_stats","_picture","_uniqueName","_profileNam
 _name = param [0, "", [""]];
 _class = param [1, "", [""]];
 _gear = param [2, "", [""]];
-_stats = param [3, [(random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1)], [], 10];
+_stats = param [3, [(random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1), (random 1)],  []];
 _picture = param [4, "", [""]];
 
 _uniqueName = _name splitString " '" joinString ""; // Example for later calling: If operator name was James 'King' Kingsley, _uniqueName is now JamesKingKingsley.

@@ -27,7 +27,9 @@ switch (_param) do {
 		_buttonClicked = (missionNamespace getVariable "gear_button_clicked") select 1; // Number ranging from 0 to 3 depending on what button was clicked.
 		_buttonCtrl = ctrlIDC ((missionNamespace getVariable "gear_button_clicked") select 0); // Control name of button that was clicked. (ranging from Control #1603 to Control #1606)
 		_currentOP = SELECT_VALUE(OPERATOR_SELECT_CONTROLS,_buttonClicked); // Macro defined in common.hpp, operator select combobox
-		DISPLAY(5503, _currentOP) ctrlEnable false; // This works only first time around - afterwards (presumably) dialog idd/control idc is not read correctly.
+		//hint format ["%1 - %2",ctrlType(DISPLAY(5503,_currentOP)),floor(random 50)]; // debug
+		//DISPLAY(5503, _currentOP) ctrlEnable false; // This works only first time around - afterwards (presumably) dialog idd/control idc is not read correctly.
+		ctrlEnable [_currentOP, false]; // fix? IT'S A FUCKING FIX HOLY SHIT 2 WEEKS AND IT'S FIXED BY USING ORIGINAL SYNTAX.
 		_currentLB = SELECT_VALUE(OPERATOR_GEAR_SELECT_CTRL,_buttonClicked); // Gear listbox
 		lbClear _currentLB;
 		_savedLoadouts = call ARC_fnc_extractSavenames; // Extracts all savenames (strings only) from Arsenal (BIS_fnc_saveInventory_data) to populate LB. Returns array with strings.
@@ -50,7 +52,6 @@ switch (_param) do {
 		_selectedLoadout = lbData [_currentLB, lbCurSel _currentLB];
 		lbClear _currentLB; // Double clear for the lb, just for safety. It also gets cleared in fn_handleGear.
 		[_selectedLoadout, _currentOperator, true] call ARC_fnc_handleDummyLoadout;
-		DISPLAY(5503, _currentOP) ctrlEnable true;
 		createDialog 'ARC_Operator_Gear_View';
 	};
 };
